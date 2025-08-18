@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# RuboCop runner script for Docker environment
+# Usage: ./bin/rubocop [options]
+
+if [ "$1" = "-a" ] || [ "$1" = "--auto-correct" ]; then
+  echo "Running RuboCop with auto-correct..."
+  docker-compose exec web bundle exec rubocop -A
+elif [ "$1" = "-A" ] || [ "$1" = "--auto-correct-all" ]; then
+  echo "Running RuboCop with auto-correct (including unsafe)..."
+  docker-compose exec web bundle exec rubocop -A
+else
+  echo "Running RuboCop..."
+  docker-compose exec web bundle exec rubocop "$@"
+fi

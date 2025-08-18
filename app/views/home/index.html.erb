@@ -1,0 +1,16 @@
+<div class="min-h-screen flex items-center justify-center px-4">
+  <div class="max-w-md w-full text-center">
+    <div class="mb-8">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Linkazo</h1>
+      <p class="text-lg text-gray-600 mb-8">Create your personalized link tree and share all your important links in one place.</p>
+    </div>
+    
+    <div class="space-y-4">
+      <%= link_to "Get Started", new_user_registration_path, 
+          class: "w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-200 block" %>
+      
+      <%= link_to "Sign In", new_user_session_path, 
+          class: "w-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium py-3 px-6 rounded-lg transition duration-200 block" %>
+    </div>
+  </div>
+</div>

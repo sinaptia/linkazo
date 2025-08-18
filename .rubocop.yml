@@ -1,0 +1,76 @@
+# RuboCop configuration for Rails Linkazo application
+
+plugins:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 3.2.2
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'public/**/*'
+    - 'storage/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'Gemfile.lock'
+    - 'config.ru'
+
+# Rails specific configurations
+Rails:
+  Enabled: true
+
+# Style configurations
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+# Layout configurations
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'config/routes.rb'
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Metrics configurations
+Metrics/BlockLength:
+  Exclude:
+    - 'config/routes.rb'
+    - 'spec/**/*'
+    - 'test/**/*'
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'db/migrate/**/*'
+
+# Rails specific cops
+Rails/FilePath:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false
+
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - 'app/controllers/users/registrations_controller.rb'
