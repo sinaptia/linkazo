@@ -1,6 +1,5 @@
 <div class="min-h-screen" style="background: linear-gradient(135deg, <%= @user.secondary_color %>E6, <%= @user.secondary_color %>);">
   <div class="max-w-md mx-auto px-6 py-12 lg:py-16">
-    <!-- Profile Header -->
     <div class="text-center mb-10 lg:mb-12">
       <div class="mb-6">
         <% if @user.avatar.attached? %>
@@ -22,7 +21,6 @@
       <% end %>
     </div>
 
-    <!-- Links -->
     <div class="space-y-4 lg:space-y-5">
       <% @links.each do |link| %>
         <%= link_to link.url, target: "_blank", rel: "noopener noreferrer",
@@ -60,7 +58,6 @@
       <% end %>
     </div>
 
-    <!-- Footer -->
     <div class="text-center mt-16 lg:mt-20 pt-8 border-t border-white/20">
       <p class="text-white/60 text-sm lg:text-base">
         Created with 
@@ -70,7 +67,6 @@
   </div>
 </div>
 
-<!-- Custom styles for this user's theme -->
 <style>
   body {
     font-family: '<%= @user.font_family %>', 'Inter', sans-serif;

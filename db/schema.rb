@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_18_153753) do
     t.datetime "updated_at", null: false
     t.text "bio"
     t.string "username", null: false
+    t.string "display_name", null: false
     t.string "theme_primary_color"
     t.string "theme_secondary_color"
     t.string "theme_font_family"

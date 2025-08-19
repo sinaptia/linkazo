@@ -6,11 +6,11 @@ module Users
     protected
 
     def configure_sign_up_params
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :display_name])
     end
 
     def configure_account_update_params
-      devise_parameter_sanitizer.permit(:account_update, keys: %i[name bio username avatar])
+      devise_parameter_sanitizer.permit(:account_update, keys: %i[display_name bio username avatar])
     end
 
     def update_resource(resource, params)
